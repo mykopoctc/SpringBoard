@@ -8,9 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloController {
 
 	@RequestMapping(value = "/hello")
-	public String hellSpringBoot(Model model) {
+	public String hello(Model model) {
 		model.addAttribute("name", "홍길동");
 		return "hello";
+	}
+	
+	@RequestMapping(value = "/ajax")
+	public String ajax() {
+		return "ajax";
 	}
 
 }
