@@ -5,17 +5,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HelloController {
+public class HomeController {
 
 	@RequestMapping(value = "/hello")
 	public String hello(Model model) {
 		model.addAttribute("name", "홍길동");
-		return "hello";
+		return "home/hello";
 	}
 	
 	@RequestMapping(value = "/ajax")
 	public String ajax() {
-		return "ajax";
+		return "home/ajax";
 	}
 
 }

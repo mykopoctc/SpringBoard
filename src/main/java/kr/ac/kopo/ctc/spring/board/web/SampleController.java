@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.ac.kopo.ctc.spring.board.domain.Sample;
 import kr.ac.kopo.ctc.spring.board.repository.SampleRepository;
+import kr.ac.kopo.ctc.spring.board.service.SampleService;
 
 @Controller
 public class SampleController {
@@ -21,6 +22,21 @@ public class SampleController {
 	@Autowired
 	private SampleRepository sampleRepository;
 	
+	@Autowired
+	private SampleService sampleService;
+	
+	@RequestMapping(value = "/sample/noAop")
+	@ResponseBody
+	public String noAop(){
+		return sampleService.test();
+	}
+	
+	@RequestMapping(value = "/sample/aop")
+	@ResponseBody
+	public String aop(){
+		return sampleService.testAop();
+	}
+	
 	@RequestMapping(value = "/sample/findAll")
 	@ResponseBody
 	public List<Sample> findAll(Model model) {
@@ -28,5 +44,5 @@ public class SampleController {
 //		return sampleRepository.findAllByTitle("t2");
 //		return sampleRepository.findAllByTitleContaining("t2");
 	}
-
+	
 }
