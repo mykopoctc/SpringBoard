@@ -9,9 +9,11 @@
 	<br>
 	<div>
 		<div>SampleController</div>
+		<a href="sample/findAll">sample/findAll</a><br>
 		<a href="sample/noAop">sample/noAop</a><br>
 		<a href="sample/aop">sample/aop</a><br>
-		<a href="sample/findAll">sample/findAll</a><br>
+		<a href="sample/noTransactional">sample/noTransactional</a><br>
+		<a href="sample/transactional">sample/transactional</a><br>
 	</div>
 	<br>
 	<div>

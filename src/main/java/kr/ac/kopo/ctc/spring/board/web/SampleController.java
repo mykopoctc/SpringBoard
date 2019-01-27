@@ -25,10 +25,18 @@ public class SampleController {
 	@Autowired
 	private SampleService sampleService;
 	
+	@RequestMapping(value = "/sample/findAll")
+	@ResponseBody
+	public List<Sample> findAll(Model model) {
+		return sampleRepository.findAll();
+//		return sampleRepository.findAllByTitle("t2");
+//		return sampleRepository.findAllByTitleContaining("t2");
+	}
+	
 	@RequestMapping(value = "/sample/noAop")
 	@ResponseBody
 	public String noAop(){
-		return sampleService.test();
+		return sampleService.testNoAop();
 	}
 	
 	@RequestMapping(value = "/sample/aop")
@@ -37,12 +45,16 @@ public class SampleController {
 		return sampleService.testAop();
 	}
 	
-	@RequestMapping(value = "/sample/findAll")
+	@RequestMapping(value = "/sample/noTransactional")
 	@ResponseBody
-	public List<Sample> findAll(Model model) {
-		return sampleRepository.findAll();
-//		return sampleRepository.findAllByTitle("t2");
-//		return sampleRepository.findAllByTitleContaining("t2");
+	public String noTransactional(){
+		return sampleService.testNoTransactional();
+	}
+	
+	@RequestMapping(value = "/sample/transactional")
+	@ResponseBody
+	public String transactional(){
+		return sampleService.testTransactional();
 	}
 	
 }
