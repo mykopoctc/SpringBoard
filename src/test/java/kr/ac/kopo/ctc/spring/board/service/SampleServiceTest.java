@@ -26,4 +26,15 @@ public class SampleServiceTest {
 		sampleService.testAop();
 	}
 	
+	@Ignore
+	@Test(expected = RuntimeException.class)
+	public void testNoTransactional() {
+		sampleService.testNoTransactional();
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void testTransactional() {
+		sampleService.testTransactional();
+	}
+	
 }
