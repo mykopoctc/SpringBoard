@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.ac.kopo.ctc.spring.board.domain.Sample;
 import kr.ac.kopo.ctc.spring.board.repository.SampleRepository;
-import kr.ac.kopo.ctc.spring.board.service.SampleService;
 
 @Controller
 public class SampleController {
@@ -22,39 +21,12 @@ public class SampleController {
 	@Autowired
 	private SampleRepository sampleRepository;
 	
-	@Autowired
-	private SampleService sampleService;
-	
 	@RequestMapping(value = "/sample/findAll")
 	@ResponseBody
 	public List<Sample> findAll(Model model) {
 		return sampleRepository.findAll();
 //		return sampleRepository.findAllByTitle("t2");
 //		return sampleRepository.findAllByTitleContaining("t2");
-	}
-	
-	@RequestMapping(value = "/sample/noAop")
-	@ResponseBody
-	public String noAop(){
-		return sampleService.testNoAop();
-	}
-	
-	@RequestMapping(value = "/sample/aop")
-	@ResponseBody
-	public String aop(){
-		return sampleService.testAop();
-	}
-	
-	@RequestMapping(value = "/sample/noTransactional")
-	@ResponseBody
-	public String noTransactional(){
-		return sampleService.testNoTransactional();
-	}
-	
-	@RequestMapping(value = "/sample/transactional")
-	@ResponseBody
-	public String transactional(){
-		return sampleService.testTransactional();
 	}
 	
 }
