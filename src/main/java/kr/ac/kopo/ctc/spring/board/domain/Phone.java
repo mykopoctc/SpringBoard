@@ -22,7 +22,11 @@ public class Phone {
 //	@Column
 //	private int memberId;
 	
-	@ManyToOne(targetEntity=Member.class, fetch=FetchType.LAZY)
+//	@ManyToOne(targetEntity=Member.class, fetch=FetchType.LAZY)
+//	@JoinColumn(name="member_id")
+//	private Member member;
+	
+	@ManyToOne(optional=false)
 	@JoinColumn(name="member_id")
 	private Member member;
 	

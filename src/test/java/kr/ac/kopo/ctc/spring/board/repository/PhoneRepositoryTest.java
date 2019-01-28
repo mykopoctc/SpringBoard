@@ -25,7 +25,7 @@ public class PhoneRepositoryTest {
 	
 	@Test
 	@Transactional
-	public void findAll() {
+	public void manyToOne_OneWay() {
 		Member first = new Member("Jung");
 		Member second = new Member("Dong");
 		Member third = new Member("Min");
