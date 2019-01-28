@@ -18,28 +18,28 @@ public class MemberRepositoryTest {
 	@Autowired
 	private MemberRepository memberRepository;
 	
-	@Test
-	public void findAll() {
-		Member first = new Member("Jung");
-		first.addPhone(new Phone("010-XXXX-XXXX"));
-		first.addPhone(new Phone("010-YYYY-YYYY"));
- 
-		Member second = new Member("Dong");
-		second.addPhone(new Phone("010-ZZZZ-ZZZZ"));
- 
-		Member third = new Member("Min");
- 
-		memberRepository.save(first);
-		memberRepository.save(second);
-		memberRepository.save(third);
- 
-		List<Member> list = memberRepository.findAll();
- 
-		for( Member m : list ){
-			System.out.println(m.toString());
-		}
- 
-		memberRepository.deleteAll();
-	}
+//	@Test
+//	public void findAll() {
+//		Member first = new Member("Jung");
+//		first.addPhone(new Phone("010-XXXX-XXXX"));
+//		first.addPhone(new Phone("010-YYYY-YYYY"));
+// 
+//		Member second = new Member("Dong");
+//		second.addPhone(new Phone("010-ZZZZ-ZZZZ"));
+// 
+//		Member third = new Member("Min");
+// 
+//		memberRepository.save(first);
+//		memberRepository.save(second);
+//		memberRepository.save(third);
+// 
+//		List<Member> list = memberRepository.findAll();
+// 
+//		for( Member m : list ){
+//			System.out.println(m.toString());
+//		}
+// 
+//		memberRepository.deleteAll();
+//	}
 	
 }
